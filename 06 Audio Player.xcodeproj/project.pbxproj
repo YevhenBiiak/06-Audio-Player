@@ -9,21 +9,28 @@
 /* Begin PBXBuildFile section */
 		575644E028663F41002D801C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575644DF28663F41002D801C /* AppDelegate.swift */; };
 		575644E228663F41002D801C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575644E128663F41002D801C /* SceneDelegate.swift */; };
-		575644E428663F41002D801C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575644E328663F41002D801C /* ViewController.swift */; };
-		575644E728663F41002D801C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575644E528663F41002D801C /* Main.storyboard */; };
 		575644E928663F43002D801C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 575644E828663F43002D801C /* Assets.xcassets */; };
 		575644EC28663F43002D801C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575644EA28663F43002D801C /* LaunchScreen.storyboard */; };
+		575644F5286714BF002D801C /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575644F4286714BF002D801C /* SongListViewController.swift */; };
+		575644FA2867152B002D801C /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575644F92867152B002D801C /* PlayerView.swift */; };
+		575644FC28671552002D801C /* SongCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575644FB28671552002D801C /* SongCellView.swift */; };
+		575644FE28671561002D801C /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575644FD28671561002D801C /* Song.swift */; };
+		5756450028671578002D801C /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575644FF28671578002D801C /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		575644DC28663F41002D801C /* 06 Audio Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "06 Audio Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		575644DF28663F41002D801C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		575644E128663F41002D801C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		575644E328663F41002D801C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		575644E628663F41002D801C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		575644E828663F43002D801C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		575644EB28663F43002D801C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		575644ED28663F43002D801C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		575644F4286714BF002D801C /* SongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
+		575644F92867152B002D801C /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		575644FB28671552002D801C /* SongCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellView.swift; sourceTree = "<group>"; };
+		575644FD28671561002D801C /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		575644FF28671578002D801C /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		575645012867171D002D801C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +65,41 @@
 			children = (
 				575644DF28663F41002D801C /* AppDelegate.swift */,
 				575644E128663F41002D801C /* SceneDelegate.swift */,
-				575644E328663F41002D801C /* ViewController.swift */,
-				575644E528663F41002D801C /* Main.storyboard */,
+				575644F8286714F0002D801C /* ViewControllers */,
+				575644F7286714E8002D801C /* Models */,
+				575644F6286714E0002D801C /* Views */,
 				575644E828663F43002D801C /* Assets.xcassets */,
+				575645012867171D002D801C /* MyPlayground.playground */,
 				575644EA28663F43002D801C /* LaunchScreen.storyboard */,
 				575644ED28663F43002D801C /* Info.plist */,
 			);
 			path = "06 Audio Player";
+			sourceTree = "<group>";
+		};
+		575644F6286714E0002D801C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				575644F92867152B002D801C /* PlayerView.swift */,
+				575644FB28671552002D801C /* SongCellView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		575644F7286714E8002D801C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				575644FD28671561002D801C /* Song.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		575644F8286714F0002D801C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				575644F4286714BF002D801C /* SongListViewController.swift */,
+				575644FF28671578002D801C /* PlayerViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +163,6 @@
 			files = (
 				575644EC28663F43002D801C /* LaunchScreen.storyboard in Resources */,
 				575644E928663F43002D801C /* Assets.xcassets in Resources */,
-				575644E728663F41002D801C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,23 +193,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				575644E428663F41002D801C /* ViewController.swift in Sources */,
+				575644FE28671561002D801C /* Song.swift in Sources */,
 				575644E028663F41002D801C /* AppDelegate.swift in Sources */,
 				575644E228663F41002D801C /* SceneDelegate.swift in Sources */,
+				5756450028671578002D801C /* PlayerViewController.swift in Sources */,
+				575644F5286714BF002D801C /* SongListViewController.swift in Sources */,
+				575644FA2867152B002D801C /* PlayerView.swift in Sources */,
+				575644FC28671552002D801C /* SongCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		575644E528663F41002D801C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				575644E628663F41002D801C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		575644EA28663F43002D801C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -311,11 +341,10 @@
 				DEVELOPMENT_TEAM = P3BYVBK57Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "06 Audio Player/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Audio Player";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,7 +354,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -339,11 +368,10 @@
 				DEVELOPMENT_TEAM = P3BYVBK57Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "06 Audio Player/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Audio Player";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -353,7 +381,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
