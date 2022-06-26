@@ -13,9 +13,13 @@
 		575644EC28663F43002D801C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575644EA28663F43002D801C /* LaunchScreen.storyboard */; };
 		575644F5286714BF002D801C /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575644F4286714BF002D801C /* SongListViewController.swift */; };
 		575644FA2867152B002D801C /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575644F92867152B002D801C /* PlayerView.swift */; };
-		575644FC28671552002D801C /* SongCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575644FB28671552002D801C /* SongCellView.swift */; };
+		575644FC28671552002D801C /* SongItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575644FB28671552002D801C /* SongItemView.swift */; };
 		575644FE28671561002D801C /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575644FD28671561002D801C /* Song.swift */; };
 		5756450028671578002D801C /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575644FF28671578002D801C /* PlayerViewController.swift */; };
+		5756450328672811002D801C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756450228672811002D801C /* AppConstants.swift */; };
+		57564506286729E9002D801C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57564505286729E9002D801C /* UIViewExtension.swift */; };
+		57564508286733B6002D801C /* PlayingNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57564507286733B6002D801C /* PlayingNowView.swift */; };
+		575A0D09286790E70027DA99 /* SongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575A0D08286790E70027DA99 /* SongListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,10 +31,14 @@
 		575644ED28663F43002D801C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		575644F4286714BF002D801C /* SongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
 		575644F92867152B002D801C /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		575644FB28671552002D801C /* SongCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellView.swift; sourceTree = "<group>"; };
+		575644FB28671552002D801C /* SongItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongItemView.swift; sourceTree = "<group>"; };
 		575644FD28671561002D801C /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		575644FF28671578002D801C /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		575645012867171D002D801C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		5756450228672811002D801C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		57564505286729E9002D801C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		57564507286733B6002D801C /* PlayingNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingNowView.swift; sourceTree = "<group>"; };
+		575A0D08286790E70027DA99 /* SongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +76,10 @@
 				575644F8286714F0002D801C /* ViewControllers */,
 				575644F7286714E8002D801C /* Models */,
 				575644F6286714E0002D801C /* Views */,
+				57564504286729CF002D801C /* Extensions */,
 				575644E828663F43002D801C /* Assets.xcassets */,
-				575645012867171D002D801C /* MyPlayground.playground */,
 				575644EA28663F43002D801C /* LaunchScreen.storyboard */,
+				575645012867171D002D801C /* MyPlayground.playground */,
 				575644ED28663F43002D801C /* Info.plist */,
 			);
 			path = "06 Audio Player";
@@ -79,8 +88,8 @@
 		575644F6286714E0002D801C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				575644F92867152B002D801C /* PlayerView.swift */,
-				575644FB28671552002D801C /* SongCellView.swift */,
+				575A0D0A286838CA0027DA99 /* SongList */,
+				57F1FE45286878BB005A2986 /* Player */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -89,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				575644FD28671561002D801C /* Song.swift */,
+				5756450228672811002D801C /* AppConstants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -100,6 +110,32 @@
 				575644FF28671578002D801C /* PlayerViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		57564504286729CF002D801C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				57564505286729E9002D801C /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		575A0D0A286838CA0027DA99 /* SongList */ = {
+			isa = PBXGroup;
+			children = (
+				575A0D08286790E70027DA99 /* SongListView.swift */,
+				575644FB28671552002D801C /* SongItemView.swift */,
+				57564507286733B6002D801C /* PlayingNowView.swift */,
+			);
+			path = SongList;
+			sourceTree = "<group>";
+		};
+		57F1FE45286878BB005A2986 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				575644F92867152B002D801C /* PlayerView.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,12 +230,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				575644FE28671561002D801C /* Song.swift in Sources */,
+				57564508286733B6002D801C /* PlayingNowView.swift in Sources */,
 				575644E028663F41002D801C /* AppDelegate.swift in Sources */,
 				575644E228663F41002D801C /* SceneDelegate.swift in Sources */,
+				5756450328672811002D801C /* AppConstants.swift in Sources */,
 				5756450028671578002D801C /* PlayerViewController.swift in Sources */,
 				575644F5286714BF002D801C /* SongListViewController.swift in Sources */,
+				57564506286729E9002D801C /* UIViewExtension.swift in Sources */,
+				575A0D09286790E70027DA99 /* SongListView.swift in Sources */,
 				575644FA2867152B002D801C /* PlayerView.swift in Sources */,
-				575644FC28671552002D801C /* SongCellView.swift in Sources */,
+				575644FC28671552002D801C /* SongItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

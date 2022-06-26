@@ -8,9 +8,21 @@
 import UIKit
 
 class PlayerViewController: UIViewController {
-
+    
+    var song: Song? {
+        didSet {
+            
+        }
+    }
+    
+    // Life cycle and override methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
 }
