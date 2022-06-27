@@ -52,7 +52,7 @@ extension UIView {
                 views[label] = view
             }
         }
-        if H.starts(with: "|~[") && H.reversed().starts(with: "|~]") {
+        if H.hasPrefix("|~[") && H.hasSuffix("]~|") {
             let viewName = H.components(separatedBy: CharacterSet.letters.inverted).joined()
             views[viewName]!.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
             if let size = getSize(from: H) {
@@ -61,7 +61,7 @@ extension UIView {
         } else if !H.isEmpty {
             activateConstraints(format: "H:" + H)
         }
-        if V.starts(with: "|~[") && V.reversed().starts(with: "|~]") {
+        if V.hasPrefix("|~[") && V.hasSuffix("]~|") {
             let viewName = V.components(separatedBy: CharacterSet.letters.inverted).joined()
             views[viewName]!.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
             if let size = getSize(from: V) {

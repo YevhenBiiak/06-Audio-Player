@@ -20,6 +20,42 @@
 		57564506286729E9002D801C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57564505286729E9002D801C /* UIViewExtension.swift */; };
 		57564508286733B6002D801C /* PlayingNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57564507286733B6002D801C /* PlayingNowView.swift */; };
 		575A0D09286790E70027DA99 /* SongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575A0D08286790E70027DA99 /* SongListView.swift */; };
+		57F1FE892869D58F005A2986 /* ismael-olaf-back-to-you.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE792869D58F005A2986 /* ismael-olaf-back-to-you.mp3 */; };
+		57F1FE8A2869D58F005A2986 /* doja-cat-vegas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE7A2869D58F005A2986 /* doja-cat-vegas.mp3 */; };
+		57F1FE8B2869D58F005A2986 /* sam-smith-love-me-more.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE7B2869D58F005A2986 /* sam-smith-love-me-more.mp3 */; };
+		57F1FE8C2869D58F005A2986 /* tom_odell_-_another_love.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE7C2869D58F005A2986 /* tom_odell_-_another_love.mp3 */; };
+		57F1FE8D2869D58F005A2986 /* boywithuke-understand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE7D2869D58F005A2986 /* boywithuke-understand.mp3 */; };
+		57F1FE8E2869D58F005A2986 /* goko-ldwbitc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE7E2869D58F005A2986 /* goko-ldwbitc.mp3 */; };
+		57F1FE8F2869D58F005A2986 /* dani-corbalan-check-the-clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE7F2869D58F005A2986 /* dani-corbalan-check-the-clock.mp3 */; };
+		57F1FE902869D58F005A2986 /* dr_-alban-feat_-whitney-peyton-change-i-have-a-dream.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE802869D58F005A2986 /* dr_-alban-feat_-whitney-peyton-change-i-have-a-dream.mp3 */; };
+		57F1FE912869D58F005A2986 /* goya-menor-feat_-nektunez-ameno-amapiano-you-wanna-bamba-david-guetta-remix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE812869D58F005A2986 /* goya-menor-feat_-nektunez-ameno-amapiano-you-wanna-bamba-david-guetta-remix.mp3 */; };
+		57F1FE922869D58F005A2986 /* tiesto-feat_-deorro-savage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE822869D58F005A2986 /* tiesto-feat_-deorro-savage.mp3 */; };
+		57F1FE932869D58F005A2986 /* maneskin-supermodel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE832869D58F005A2986 /* maneskin-supermodel.mp3 */; };
+		57F1FE942869D58F005A2986 /* d3ma-feat_-thatsimo-timmy-commerford-infinity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE842869D58F005A2986 /* d3ma-feat_-thatsimo-timmy-commerford-infinity.mp3 */; };
+		57F1FE952869D58F005A2986 /* jack-harlow-dua-lipa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE852869D58F005A2986 /* jack-harlow-dua-lipa.mp3 */; };
+		57F1FE962869D58F005A2986 /* oliver-tree-i-hate-you.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE862869D58F005A2986 /* oliver-tree-i-hate-you.mp3 */; };
+		57F1FE972869D58F005A2986 /* onerepublic-i-aint-worried.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE872869D58F005A2986 /* onerepublic-i-aint-worried.mp3 */; };
+		57F1FE982869D58F005A2986 /* juno-feat_-mira-toata-noaptea.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE882869D58F005A2986 /* juno-feat_-mira-toata-noaptea.mp3 */; };
+		57F1FE9D2869D5E2005A2986 /* rihanna-diamonds(mp3bit.cc).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE9A2869D5E2005A2986 /* rihanna-diamonds(mp3bit.cc).mp3 */; };
+		57F1FE9E2869D5E2005A2986 /* only-love-can-hurt-like-this-paloma-faith(mp3bit.cc).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE9B2869D5E2005A2986 /* only-love-can-hurt-like-this-paloma-faith(mp3bit.cc).mp3 */; };
+		57F1FEA22869D671005A2986 /* the-weeknd-call-out-my-name(mp3bit.cc).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FE9F2869D670005A2986 /* the-weeknd-call-out-my-name(mp3bit.cc).mp3 */; };
+		57F1FEA42869D671005A2986 /* BTS - Moon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEA12869D670005A2986 /* BTS - Moon.mp3 */; };
+		57F1FEA82869D6AF005A2986 /* imagine-dragons-bones.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEA52869D6AF005A2986 /* imagine-dragons-bones.mp3 */; };
+		57F1FEA92869D6AF005A2986 /* Farruko - Pepas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEA62869D6AF005A2986 /* Farruko - Pepas.mp3 */; };
+		57F1FEAA2869D6AF005A2986 /* Black Eyed Peas, Shakira, David Guetta - Don't You Worry_[mp3mob.net].mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEA72869D6AF005A2986 /* Black Eyed Peas, Shakira, David Guetta - Don't You Worry_[mp3mob.net].mp3 */; };
+		57F1FEAE2869D6CD005A2986 /* Elley Duhé - MIDDLE OF THE NIGHT.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEAB2869D6CD005A2986 /* Elley Duhé - MIDDLE OF THE NIGHT.mp3 */; };
+		57F1FEAF2869D6CD005A2986 /* Beyoncé - Break My Soul.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEAC2869D6CD005A2986 /* Beyoncé - Break My Soul.mp3 */; };
+		57F1FEB02869D6CD005A2986 /* James Hype, Miggy Dela Rosa - Ferrari.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEAD2869D6CD005A2986 /* James Hype, Miggy Dela Rosa - Ferrari.mp3 */; };
+		57F1FEB52869D6E9005A2986 /* lady-gaga-hold-my-hand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEB12869D6E9005A2986 /* lady-gaga-hold-my-hand.mp3 */; };
+		57F1FEB82869D6E9005A2986 /* lizzo-about-damn-time.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEB42869D6E9005A2986 /* lizzo-about-damn-time.mp3 */; };
+		57F1FEC12869D70D005A2986 /* misty_-_desert_rose_muzati.net.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEB92869D70D005A2986 /* misty_-_desert_rose_muzati.net.mp3 */; };
+		57F1FEC22869D70D005A2986 /* hiti_2022_-_imanbek__byor_-_belly_dancer_(z2.fm).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEBA2869D70D005A2986 /* hiti_2022_-_imanbek__byor_-_belly_dancer_(z2.fm).mp3 */; };
+		57F1FEC32869D70D005A2986 /* melisa_-_im_alone_(feat._tommo)_muzati.net.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEBB2869D70D005A2986 /* melisa_-_im_alone_(feat._tommo)_muzati.net.mp3 */; };
+		57F1FEC42869D70D005A2986 /* inna_-_cola_song_(feat._j_balvin)_muzati.net.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEBC2869D70D005A2986 /* inna_-_cola_song_(feat._j_balvin)_muzati.net.mp3 */; };
+		57F1FEC52869D70D005A2986 /* mike_posner_-_i_took_a_pill_in_ibiza_(seeb_remix)_muzati.net.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEBD2869D70D005A2986 /* mike_posner_-_i_took_a_pill_in_ibiza_(seeb_remix)_muzati.net.mp3 */; };
+		57F1FEC62869D70D005A2986 /* purple_disco_machine_-_in_the_dark_(feat._sophie_and_the_giants)_muzati.net.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEBE2869D70D005A2986 /* purple_disco_machine_-_in_the_dark_(feat._sophie_and_the_giants)_muzati.net.mp3 */; };
+		57F1FEC72869D70D005A2986 /* silent_circle_-_touch_in_the_night_(crash_version)_muzati.net.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEBF2869D70D005A2986 /* silent_circle_-_touch_in_the_night_(crash_version)_muzati.net.mp3 */; };
+		57F1FEC82869D70D005A2986 /* Harry Styles - As It Was.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEC02869D70D005A2986 /* Harry Styles - As It Was.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +75,42 @@
 		57564505286729E9002D801C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		57564507286733B6002D801C /* PlayingNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingNowView.swift; sourceTree = "<group>"; };
 		575A0D08286790E70027DA99 /* SongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
+		57F1FE792869D58F005A2986 /* ismael-olaf-back-to-you.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "ismael-olaf-back-to-you.mp3"; path = "../../../../../../../../Downloads/ismael-olaf-back-to-you.mp3"; sourceTree = "<group>"; };
+		57F1FE7A2869D58F005A2986 /* doja-cat-vegas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "doja-cat-vegas.mp3"; path = "../../../../../../../../Downloads/doja-cat-vegas.mp3"; sourceTree = "<group>"; };
+		57F1FE7B2869D58F005A2986 /* sam-smith-love-me-more.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "sam-smith-love-me-more.mp3"; path = "../../../../../../../../Downloads/sam-smith-love-me-more.mp3"; sourceTree = "<group>"; };
+		57F1FE7C2869D58F005A2986 /* tom_odell_-_another_love.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "tom_odell_-_another_love.mp3"; path = "../../../../../../../../Downloads/tom_odell_-_another_love.mp3"; sourceTree = "<group>"; };
+		57F1FE7D2869D58F005A2986 /* boywithuke-understand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "boywithuke-understand.mp3"; path = "../../../../../../../../Downloads/boywithuke-understand.mp3"; sourceTree = "<group>"; };
+		57F1FE7E2869D58F005A2986 /* goko-ldwbitc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goko-ldwbitc.mp3"; path = "../../../../../../../../Downloads/goko-ldwbitc.mp3"; sourceTree = "<group>"; };
+		57F1FE7F2869D58F005A2986 /* dani-corbalan-check-the-clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "dani-corbalan-check-the-clock.mp3"; path = "../../../../../../../../Downloads/dani-corbalan-check-the-clock.mp3"; sourceTree = "<group>"; };
+		57F1FE802869D58F005A2986 /* dr_-alban-feat_-whitney-peyton-change-i-have-a-dream.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "dr_-alban-feat_-whitney-peyton-change-i-have-a-dream.mp3"; path = "../../../../../../../../Downloads/dr_-alban-feat_-whitney-peyton-change-i-have-a-dream.mp3"; sourceTree = "<group>"; };
+		57F1FE812869D58F005A2986 /* goya-menor-feat_-nektunez-ameno-amapiano-you-wanna-bamba-david-guetta-remix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "goya-menor-feat_-nektunez-ameno-amapiano-you-wanna-bamba-david-guetta-remix.mp3"; path = "../../../../../../../../Downloads/goya-menor-feat_-nektunez-ameno-amapiano-you-wanna-bamba-david-guetta-remix.mp3"; sourceTree = "<group>"; };
+		57F1FE822869D58F005A2986 /* tiesto-feat_-deorro-savage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "tiesto-feat_-deorro-savage.mp3"; path = "../../../../../../../../Downloads/tiesto-feat_-deorro-savage.mp3"; sourceTree = "<group>"; };
+		57F1FE832869D58F005A2986 /* maneskin-supermodel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "maneskin-supermodel.mp3"; path = "../../../../../../../../Downloads/maneskin-supermodel.mp3"; sourceTree = "<group>"; };
+		57F1FE842869D58F005A2986 /* d3ma-feat_-thatsimo-timmy-commerford-infinity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "d3ma-feat_-thatsimo-timmy-commerford-infinity.mp3"; path = "../../../../../../../../Downloads/d3ma-feat_-thatsimo-timmy-commerford-infinity.mp3"; sourceTree = "<group>"; };
+		57F1FE852869D58F005A2986 /* jack-harlow-dua-lipa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "jack-harlow-dua-lipa.mp3"; path = "../../../../../../../../Downloads/jack-harlow-dua-lipa.mp3"; sourceTree = "<group>"; };
+		57F1FE862869D58F005A2986 /* oliver-tree-i-hate-you.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-tree-i-hate-you.mp3"; path = "../../../../../../../../Downloads/oliver-tree-i-hate-you.mp3"; sourceTree = "<group>"; };
+		57F1FE872869D58F005A2986 /* onerepublic-i-aint-worried.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "onerepublic-i-aint-worried.mp3"; path = "../../../../../../../../Downloads/onerepublic-i-aint-worried.mp3"; sourceTree = "<group>"; };
+		57F1FE882869D58F005A2986 /* juno-feat_-mira-toata-noaptea.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "juno-feat_-mira-toata-noaptea.mp3"; path = "../../../../../../../../Downloads/juno-feat_-mira-toata-noaptea.mp3"; sourceTree = "<group>"; };
+		57F1FE9A2869D5E2005A2986 /* rihanna-diamonds(mp3bit.cc).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "rihanna-diamonds(mp3bit.cc).mp3"; path = "../../../../../../../../Downloads/rihanna-diamonds(mp3bit.cc).mp3"; sourceTree = "<group>"; };
+		57F1FE9B2869D5E2005A2986 /* only-love-can-hurt-like-this-paloma-faith(mp3bit.cc).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "only-love-can-hurt-like-this-paloma-faith(mp3bit.cc).mp3"; path = "../../../../../../../../Downloads/only-love-can-hurt-like-this-paloma-faith(mp3bit.cc).mp3"; sourceTree = "<group>"; };
+		57F1FE9F2869D670005A2986 /* the-weeknd-call-out-my-name(mp3bit.cc).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "the-weeknd-call-out-my-name(mp3bit.cc).mp3"; path = "../../../../../../../../Downloads/the-weeknd-call-out-my-name(mp3bit.cc).mp3"; sourceTree = "<group>"; };
+		57F1FEA12869D670005A2986 /* BTS - Moon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "BTS - Moon.mp3"; path = "../../../../../../../../Downloads/BTS - Moon.mp3"; sourceTree = "<group>"; };
+		57F1FEA52869D6AF005A2986 /* imagine-dragons-bones.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "imagine-dragons-bones.mp3"; path = "../../../../../../../../Downloads/imagine-dragons-bones.mp3"; sourceTree = "<group>"; };
+		57F1FEA62869D6AF005A2986 /* Farruko - Pepas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Farruko - Pepas.mp3"; path = "../../../../../../../../Downloads/Farruko - Pepas.mp3"; sourceTree = "<group>"; };
+		57F1FEA72869D6AF005A2986 /* Black Eyed Peas, Shakira, David Guetta - Don't You Worry_[mp3mob.net].mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Black Eyed Peas, Shakira, David Guetta - Don't You Worry_[mp3mob.net].mp3"; path = "../../../../../../../../Downloads/Black Eyed Peas, Shakira, David Guetta - Don't You Worry_[mp3mob.net].mp3"; sourceTree = "<group>"; };
+		57F1FEAB2869D6CD005A2986 /* Elley Duhé - MIDDLE OF THE NIGHT.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Elley Duhé - MIDDLE OF THE NIGHT.mp3"; path = "../../../../../../../../Downloads/Elley Duhé - MIDDLE OF THE NIGHT.mp3"; sourceTree = "<group>"; };
+		57F1FEAC2869D6CD005A2986 /* Beyoncé - Break My Soul.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Beyoncé - Break My Soul.mp3"; path = "../../../../../../../../Downloads/Beyoncé - Break My Soul.mp3"; sourceTree = "<group>"; };
+		57F1FEAD2869D6CD005A2986 /* James Hype, Miggy Dela Rosa - Ferrari.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "James Hype, Miggy Dela Rosa - Ferrari.mp3"; path = "../../../../../../../../Downloads/James Hype, Miggy Dela Rosa - Ferrari.mp3"; sourceTree = "<group>"; };
+		57F1FEB12869D6E9005A2986 /* lady-gaga-hold-my-hand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "lady-gaga-hold-my-hand.mp3"; path = "../../../../../../../../Downloads/lady-gaga-hold-my-hand.mp3"; sourceTree = "<group>"; };
+		57F1FEB42869D6E9005A2986 /* lizzo-about-damn-time.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "lizzo-about-damn-time.mp3"; path = "../../../../../../../../Downloads/lizzo-about-damn-time.mp3"; sourceTree = "<group>"; };
+		57F1FEB92869D70D005A2986 /* misty_-_desert_rose_muzati.net.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "misty_-_desert_rose_muzati.net.mp3"; path = "../../../../../../../../Downloads/misty_-_desert_rose_muzati.net.mp3"; sourceTree = "<group>"; };
+		57F1FEBA2869D70D005A2986 /* hiti_2022_-_imanbek__byor_-_belly_dancer_(z2.fm).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "hiti_2022_-_imanbek__byor_-_belly_dancer_(z2.fm).mp3"; path = "../../../../../../../../Downloads/hiti_2022_-_imanbek__byor_-_belly_dancer_(z2.fm).mp3"; sourceTree = "<group>"; };
+		57F1FEBB2869D70D005A2986 /* melisa_-_im_alone_(feat._tommo)_muzati.net.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "melisa_-_im_alone_(feat._tommo)_muzati.net.mp3"; path = "../../../../../../../../Downloads/melisa_-_im_alone_(feat._tommo)_muzati.net.mp3"; sourceTree = "<group>"; };
+		57F1FEBC2869D70D005A2986 /* inna_-_cola_song_(feat._j_balvin)_muzati.net.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "inna_-_cola_song_(feat._j_balvin)_muzati.net.mp3"; path = "../../../../../../../../Downloads/inna_-_cola_song_(feat._j_balvin)_muzati.net.mp3"; sourceTree = "<group>"; };
+		57F1FEBD2869D70D005A2986 /* mike_posner_-_i_took_a_pill_in_ibiza_(seeb_remix)_muzati.net.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "mike_posner_-_i_took_a_pill_in_ibiza_(seeb_remix)_muzati.net.mp3"; path = "../../../../../../../../Downloads/mike_posner_-_i_took_a_pill_in_ibiza_(seeb_remix)_muzati.net.mp3"; sourceTree = "<group>"; };
+		57F1FEBE2869D70D005A2986 /* purple_disco_machine_-_in_the_dark_(feat._sophie_and_the_giants)_muzati.net.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "purple_disco_machine_-_in_the_dark_(feat._sophie_and_the_giants)_muzati.net.mp3"; path = "../../../../../../../../Downloads/purple_disco_machine_-_in_the_dark_(feat._sophie_and_the_giants)_muzati.net.mp3"; sourceTree = "<group>"; };
+		57F1FEBF2869D70D005A2986 /* silent_circle_-_touch_in_the_night_(crash_version)_muzati.net.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "silent_circle_-_touch_in_the_night_(crash_version)_muzati.net.mp3"; path = "../../../../../../../../Downloads/silent_circle_-_touch_in_the_night_(crash_version)_muzati.net.mp3"; sourceTree = "<group>"; };
+		57F1FEC02869D70D005A2986 /* Harry Styles - As It Was.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Harry Styles - As It Was.mp3"; path = "../../../../../../../../Downloads/Harry Styles - As It Was.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +153,42 @@
 				575644EA28663F43002D801C /* LaunchScreen.storyboard */,
 				575645012867171D002D801C /* MyPlayground.playground */,
 				575644ED28663F43002D801C /* Info.plist */,
+				57F1FEC02869D70D005A2986 /* Harry Styles - As It Was.mp3 */,
+				57F1FEBA2869D70D005A2986 /* hiti_2022_-_imanbek__byor_-_belly_dancer_(z2.fm).mp3 */,
+				57F1FEBC2869D70D005A2986 /* inna_-_cola_song_(feat._j_balvin)_muzati.net.mp3 */,
+				57F1FEBB2869D70D005A2986 /* melisa_-_im_alone_(feat._tommo)_muzati.net.mp3 */,
+				57F1FEBD2869D70D005A2986 /* mike_posner_-_i_took_a_pill_in_ibiza_(seeb_remix)_muzati.net.mp3 */,
+				57F1FEB92869D70D005A2986 /* misty_-_desert_rose_muzati.net.mp3 */,
+				57F1FEBE2869D70D005A2986 /* purple_disco_machine_-_in_the_dark_(feat._sophie_and_the_giants)_muzati.net.mp3 */,
+				57F1FEBF2869D70D005A2986 /* silent_circle_-_touch_in_the_night_(crash_version)_muzati.net.mp3 */,
+				57F1FEB12869D6E9005A2986 /* lady-gaga-hold-my-hand.mp3 */,
+				57F1FEB42869D6E9005A2986 /* lizzo-about-damn-time.mp3 */,
+				57F1FEAC2869D6CD005A2986 /* Beyoncé - Break My Soul.mp3 */,
+				57F1FEAB2869D6CD005A2986 /* Elley Duhé - MIDDLE OF THE NIGHT.mp3 */,
+				57F1FEAD2869D6CD005A2986 /* James Hype, Miggy Dela Rosa - Ferrari.mp3 */,
+				57F1FEA72869D6AF005A2986 /* Black Eyed Peas, Shakira, David Guetta - Don't You Worry_[mp3mob.net].mp3 */,
+				57F1FEA62869D6AF005A2986 /* Farruko - Pepas.mp3 */,
+				57F1FEA52869D6AF005A2986 /* imagine-dragons-bones.mp3 */,
+				57F1FEA12869D670005A2986 /* BTS - Moon.mp3 */,
+				57F1FE9F2869D670005A2986 /* the-weeknd-call-out-my-name(mp3bit.cc).mp3 */,
+				57F1FE9B2869D5E2005A2986 /* only-love-can-hurt-like-this-paloma-faith(mp3bit.cc).mp3 */,
+				57F1FE9A2869D5E2005A2986 /* rihanna-diamonds(mp3bit.cc).mp3 */,
+				57F1FE7D2869D58F005A2986 /* boywithuke-understand.mp3 */,
+				57F1FE842869D58F005A2986 /* d3ma-feat_-thatsimo-timmy-commerford-infinity.mp3 */,
+				57F1FE7F2869D58F005A2986 /* dani-corbalan-check-the-clock.mp3 */,
+				57F1FE7A2869D58F005A2986 /* doja-cat-vegas.mp3 */,
+				57F1FE802869D58F005A2986 /* dr_-alban-feat_-whitney-peyton-change-i-have-a-dream.mp3 */,
+				57F1FE7E2869D58F005A2986 /* goko-ldwbitc.mp3 */,
+				57F1FE812869D58F005A2986 /* goya-menor-feat_-nektunez-ameno-amapiano-you-wanna-bamba-david-guetta-remix.mp3 */,
+				57F1FE792869D58F005A2986 /* ismael-olaf-back-to-you.mp3 */,
+				57F1FE852869D58F005A2986 /* jack-harlow-dua-lipa.mp3 */,
+				57F1FE882869D58F005A2986 /* juno-feat_-mira-toata-noaptea.mp3 */,
+				57F1FE832869D58F005A2986 /* maneskin-supermodel.mp3 */,
+				57F1FE862869D58F005A2986 /* oliver-tree-i-hate-you.mp3 */,
+				57F1FE872869D58F005A2986 /* onerepublic-i-aint-worried.mp3 */,
+				57F1FE7B2869D58F005A2986 /* sam-smith-love-me-more.mp3 */,
+				57F1FE822869D58F005A2986 /* tiesto-feat_-deorro-savage.mp3 */,
+				57F1FE7C2869D58F005A2986 /* tom_odell_-_another_love.mp3 */,
 			);
 			path = "06 Audio Player";
 			sourceTree = "<group>";
@@ -197,8 +305,44 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F1FEB82869D6E9005A2986 /* lizzo-about-damn-time.mp3 in Resources */,
+				57F1FE912869D58F005A2986 /* goya-menor-feat_-nektunez-ameno-amapiano-you-wanna-bamba-david-guetta-remix.mp3 in Resources */,
+				57F1FE892869D58F005A2986 /* ismael-olaf-back-to-you.mp3 in Resources */,
+				57F1FE8B2869D58F005A2986 /* sam-smith-love-me-more.mp3 in Resources */,
+				57F1FE932869D58F005A2986 /* maneskin-supermodel.mp3 in Resources */,
+				57F1FEC12869D70D005A2986 /* misty_-_desert_rose_muzati.net.mp3 in Resources */,
+				57F1FE982869D58F005A2986 /* juno-feat_-mira-toata-noaptea.mp3 in Resources */,
+				57F1FEB02869D6CD005A2986 /* James Hype, Miggy Dela Rosa - Ferrari.mp3 in Resources */,
+				57F1FEC72869D70D005A2986 /* silent_circle_-_touch_in_the_night_(crash_version)_muzati.net.mp3 in Resources */,
+				57F1FE952869D58F005A2986 /* jack-harlow-dua-lipa.mp3 in Resources */,
+				57F1FE962869D58F005A2986 /* oliver-tree-i-hate-you.mp3 in Resources */,
+				57F1FE8C2869D58F005A2986 /* tom_odell_-_another_love.mp3 in Resources */,
+				57F1FE922869D58F005A2986 /* tiesto-feat_-deorro-savage.mp3 in Resources */,
+				57F1FEC82869D70D005A2986 /* Harry Styles - As It Was.mp3 in Resources */,
+				57F1FE9D2869D5E2005A2986 /* rihanna-diamonds(mp3bit.cc).mp3 in Resources */,
+				57F1FEC22869D70D005A2986 /* hiti_2022_-_imanbek__byor_-_belly_dancer_(z2.fm).mp3 in Resources */,
+				57F1FE8D2869D58F005A2986 /* boywithuke-understand.mp3 in Resources */,
+				57F1FEA42869D671005A2986 /* BTS - Moon.mp3 in Resources */,
+				57F1FEAF2869D6CD005A2986 /* Beyoncé - Break My Soul.mp3 in Resources */,
+				57F1FEC32869D70D005A2986 /* melisa_-_im_alone_(feat._tommo)_muzati.net.mp3 in Resources */,
+				57F1FE942869D58F005A2986 /* d3ma-feat_-thatsimo-timmy-commerford-infinity.mp3 in Resources */,
+				57F1FE8E2869D58F005A2986 /* goko-ldwbitc.mp3 in Resources */,
+				57F1FE9E2869D5E2005A2986 /* only-love-can-hurt-like-this-paloma-faith(mp3bit.cc).mp3 in Resources */,
 				575644EC28663F43002D801C /* LaunchScreen.storyboard in Resources */,
+				57F1FEC52869D70D005A2986 /* mike_posner_-_i_took_a_pill_in_ibiza_(seeb_remix)_muzati.net.mp3 in Resources */,
+				57F1FEC62869D70D005A2986 /* purple_disco_machine_-_in_the_dark_(feat._sophie_and_the_giants)_muzati.net.mp3 in Resources */,
+				57F1FEC42869D70D005A2986 /* inna_-_cola_song_(feat._j_balvin)_muzati.net.mp3 in Resources */,
+				57F1FE8A2869D58F005A2986 /* doja-cat-vegas.mp3 in Resources */,
+				57F1FEA92869D6AF005A2986 /* Farruko - Pepas.mp3 in Resources */,
+				57F1FEB52869D6E9005A2986 /* lady-gaga-hold-my-hand.mp3 in Resources */,
+				57F1FEAA2869D6AF005A2986 /* Black Eyed Peas, Shakira, David Guetta - Don't You Worry_[mp3mob.net].mp3 in Resources */,
+				57F1FE8F2869D58F005A2986 /* dani-corbalan-check-the-clock.mp3 in Resources */,
 				575644E928663F43002D801C /* Assets.xcassets in Resources */,
+				57F1FE902869D58F005A2986 /* dr_-alban-feat_-whitney-peyton-change-i-have-a-dream.mp3 in Resources */,
+				57F1FEA22869D671005A2986 /* the-weeknd-call-out-my-name(mp3bit.cc).mp3 in Resources */,
+				57F1FE972869D58F005A2986 /* onerepublic-i-aint-worried.mp3 in Resources */,
+				57F1FEA82869D6AF005A2986 /* imagine-dragons-bones.mp3 in Resources */,
+				57F1FEAE2869D6CD005A2986 /* Elley Duhé - MIDDLE OF THE NIGHT.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
