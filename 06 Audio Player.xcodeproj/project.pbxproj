@@ -56,6 +56,7 @@
 		57F1FEC62869D70D005A2986 /* purple_disco_machine_-_in_the_dark_(feat._sophie_and_the_giants)_muzati.net.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEBE2869D70D005A2986 /* purple_disco_machine_-_in_the_dark_(feat._sophie_and_the_giants)_muzati.net.mp3 */; };
 		57F1FEC72869D70D005A2986 /* silent_circle_-_touch_in_the_night_(crash_version)_muzati.net.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEBF2869D70D005A2986 /* silent_circle_-_touch_in_the_night_(crash_version)_muzati.net.mp3 */; };
 		57F1FEC82869D70D005A2986 /* Harry Styles - As It Was.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57F1FEC02869D70D005A2986 /* Harry Styles - As It Was.mp3 */; };
+		57F1FECA2869FA42005A2986 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F1FEC92869FA42005A2986 /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		57564505286729E9002D801C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		57564507286733B6002D801C /* PlayingNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingNowView.swift; sourceTree = "<group>"; };
 		575A0D08286790E70027DA99 /* SongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
+		57C98525286A3A4D00162B81 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		57F1FE792869D58F005A2986 /* ismael-olaf-back-to-you.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "ismael-olaf-back-to-you.mp3"; path = "../../../../../../../../Downloads/ismael-olaf-back-to-you.mp3"; sourceTree = "<group>"; };
 		57F1FE7A2869D58F005A2986 /* doja-cat-vegas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "doja-cat-vegas.mp3"; path = "../../../../../../../../Downloads/doja-cat-vegas.mp3"; sourceTree = "<group>"; };
 		57F1FE7B2869D58F005A2986 /* sam-smith-love-me-more.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "sam-smith-love-me-more.mp3"; path = "../../../../../../../../Downloads/sam-smith-love-me-more.mp3"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		57F1FEBE2869D70D005A2986 /* purple_disco_machine_-_in_the_dark_(feat._sophie_and_the_giants)_muzati.net.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "purple_disco_machine_-_in_the_dark_(feat._sophie_and_the_giants)_muzati.net.mp3"; path = "../../../../../../../../Downloads/purple_disco_machine_-_in_the_dark_(feat._sophie_and_the_giants)_muzati.net.mp3"; sourceTree = "<group>"; };
 		57F1FEBF2869D70D005A2986 /* silent_circle_-_touch_in_the_night_(crash_version)_muzati.net.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "silent_circle_-_touch_in_the_night_(crash_version)_muzati.net.mp3"; path = "../../../../../../../../Downloads/silent_circle_-_touch_in_the_night_(crash_version)_muzati.net.mp3"; sourceTree = "<group>"; };
 		57F1FEC02869D70D005A2986 /* Harry Styles - As It Was.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Harry Styles - As It Was.mp3"; path = "../../../../../../../../Downloads/Harry Styles - As It Was.mp3"; sourceTree = "<group>"; };
+		57F1FEC92869FA42005A2986 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,7 @@
 			children = (
 				575644DE28663F41002D801C /* 06 Audio Player */,
 				575644DD28663F41002D801C /* Products */,
+				57C98524286A3A4C00162B81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				575644F4286714BF002D801C /* SongListViewController.swift */,
+				57F1FEC92869FA42005A2986 /* AudioPlayer.swift */,
 				575644FF28671578002D801C /* PlayerViewController.swift */,
 			);
 			path = ViewControllers;
@@ -236,6 +241,14 @@
 				57564507286733B6002D801C /* PlayingNowView.swift */,
 			);
 			path = SongList;
+			sourceTree = "<group>";
+		};
+		57C98524286A3A4C00162B81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57C98525286A3A4D00162B81 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		57F1FE45286878BB005A2986 /* Player */ = {
@@ -384,6 +397,7 @@
 				575A0D09286790E70027DA99 /* SongListView.swift in Sources */,
 				575644FA2867152B002D801C /* PlayerView.swift in Sources */,
 				575644FC28671552002D801C /* SongItemView.swift in Sources */,
+				57F1FECA2869FA42005A2986 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

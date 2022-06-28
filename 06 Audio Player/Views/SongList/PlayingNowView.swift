@@ -9,7 +9,7 @@ import UIKit
 
 class PlayingNowView: UIView {
     private lazy var blurredView: UIVisualEffectView = {
-        let blur = UIBlurEffect(style: .dark)
+        let blur = UIBlurEffect(style: .systemMaterial)
         let view = UIVisualEffectView(effect: blur)
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -19,9 +19,7 @@ class PlayingNowView: UIView {
     private let coverImage: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .systemGray5
-        imageView.image = AppConstants.emptyCover
-        imageView.image?.withTintColor(.white)
-        imageView.layer.cornerRadius = 7
+        imageView.tintColor = .systemGray
         return imageView
     }()
     
@@ -34,7 +32,7 @@ class PlayingNowView: UIView {
         var config: UIButton.Configuration = .plain()
         config.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(scale: UIImage.SymbolScale.large)
         config.image = UIImage(systemName: "play.fill")
-        config.baseForegroundColor = UIColor.white
+        config.baseForegroundColor = UIColor.secondaryLabel
         let button = UIButton(configuration: config)
         return button
     }()
@@ -43,7 +41,7 @@ class PlayingNowView: UIView {
         var config: UIButton.Configuration = .plain()
         config.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(scale: UIImage.SymbolScale.large)
         config.image = UIImage(systemName: "forward.fill")
-        config.baseForegroundColor = UIColor.white
+        config.baseForegroundColor = UIColor.secondaryLabel
         let button = UIButton(configuration: config)
         return button
     }()
@@ -56,6 +54,8 @@ class PlayingNowView: UIView {
             trackLabel.text = song?.track
         }
     }
+    
+    private var isPlayingNow: Bool = false
     
     var tapHandler: (() -> Void)?
     var playButtonHandler: (() -> Void)?
@@ -74,7 +74,9 @@ class PlayingNowView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.addBorder(at: .top, color: .darkGray, width: 0.5, topInset: 80)
+        self.addBorder(at: .top, color: .systemGray4, width: 0.5, topInset: 80)
+        coverImage.layer.cornerRadius = 5
+        coverImage.layer.masksToBounds = true
     }
     
     // MARK: - Helpers methods
@@ -89,22 +91,25 @@ class PlayingNowView: UIView {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(playingNowTapped))
         self.addGestureRecognizer(tapGesture)
         
-        let playAction = UIAction { [unowned self] _ in
-            print(1)
-            playButtonHandler?()
-            playPauseButton.setNeedsUpdateConfiguration()
-        }
-        playPauseButton.addAction(playAction, for: .touchUpInside)
-        playPauseButton.configurationUpdateHandler = { button in
-            var conf = button.configuration
-            conf?.image = UIImage(systemName: "pause.fill")
-            button.configuration = conf
+        playPauseButton.addAction(
+            UIAction { [unowned self] _ in
+                playButtonHandler?()
+                isPlayingNow.toggle()
+            },
+            for: .touchUpInside
+        )
+        playPauseButton.configurationUpdateHandler = { [unowned self] button in
+            if button.state == .normal {
+                var conf = button.configuration
+                conf?.image = isPlayingNow ? UIImage(systemName: "pause.fill") : UIImage(systemName: "play.fill")
+                button.configuration = conf
+            }
         }
         
-        let nextAction = UIAction { [unowned self] _ in
-            nextButtonHandler?()
-        }
-        nextTrackButton.addAction(nextAction, for: .touchUpInside)
+        nextTrackButton.addAction(
+            UIAction { [unowned self] _ in nextButtonHandler?() },
+            for: .touchUpInside
+        )
     }
     
     @objc private func playingNowTapped() {
@@ -112,7 +117,7 @@ class PlayingNowView: UIView {
     }
     
     @objc private func playButttonTapped() {
-        
+        playButtonHandler?()
     }
     
     @objc private func nextButtonTapped() {

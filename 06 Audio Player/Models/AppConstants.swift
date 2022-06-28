@@ -10,7 +10,7 @@ import UIKit
 class AppConstants {
     
     static let rowHeight: CGFloat = 65
-    static let emptyCover = UIImage(systemName: "music.note")
+    static let emptyCover = UIImage(systemName: "music.note", withConfiguration: UIImage.SymbolConfiguration(weight: .thin))
     
     private init() {}
 }

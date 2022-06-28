@@ -34,7 +34,7 @@ class SongListView: UIScrollView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Help methods
+    // MARK: - Helper methods
     
     private func setupViews() {
         self.contentInset.bottom = 80

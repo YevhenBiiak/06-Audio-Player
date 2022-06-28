@@ -13,6 +13,8 @@ class SongListViewController: UIViewController {
     private let songListView = SongListView()
     private let playingNowView = PlayingNowView()
     
+    var player: AudioPlayer!
+    
     var songList: [Song] = [] {
         didSet {
             updatePlayList()
@@ -23,11 +25,13 @@ class SongListViewController: UIViewController {
         super.viewDidLoad()
         loadSongs()
         setupViews()
+        player = AudioPlayer(withSongs: songList)
     }
     
     private func setupViews() {
         view.backgroundColor = .systemBackground
-        title = "Play list"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Music"
         
         setupSongListView()
         setupPlayingNowView()
@@ -38,6 +42,7 @@ class SongListViewController: UIViewController {
         songListView.setConstraints()
         songListView.tapHandler = { [unowned self] i in
             playingNowView.song = songList[i]
+            player.play(i)
         }
     }
     
@@ -45,10 +50,16 @@ class SongListViewController: UIViewController {
         view.addSubview(playingNowView)
         playingNowView.setConstraints()
         playingNowView.song = songList.first
-        //        playingNowView.tapHandler = {
-        //            let playerViewController = PlayerViewController()
-        //            playerViewController.song = song
-        //        }
+//        playingNowView.tapHandler = {
+//            let playerViewController = PlayerViewController()
+//            playerViewController.song = song
+//        }
+        playingNowView.playButtonHandler = { [unowned self] in
+            player.isPlaying ? player.pause() : player.play()
+        }
+        playingNowView.nextButtonHandler = { [unowned self] in
+            player.next()
+        }
     }
     
     private func updatePlayList() {

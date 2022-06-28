@@ -11,9 +11,8 @@ class SongItemView: UIView {
     
     private let coverImage: UIImageView = {
         let imageView = UIImageView()
+        imageView.tintColor = .systemGray
         imageView.backgroundColor = .systemGray5
-        imageView.image = AppConstants.emptyCover
-        imageView.layer.cornerRadius = 7
         return imageView
     }()
     
@@ -55,7 +54,10 @@ class SongItemView: UIView {
     }
     
     override func layoutSubviews() {
-        self.addBorder(at: .bottom, color: .systemGray, width: 0.5, leftInset: 70)
+        super.layoutSubviews()
+        self.addBorder(at: .bottom, color: .systemGray4, width: 0.4, leftInset: 70)
+        coverImage.layer.cornerRadius = 5
+        coverImage.layer.masksToBounds = true
     }
     
     private func setupViews() {
