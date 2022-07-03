@@ -15,8 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        let songListViewController = SongListViewController()
-        let navigationController = UINavigationController(rootViewController: songListViewController)
+        let playlistViewController = PlaylistViewController()
+        let navigationController = UINavigationController(rootViewController: playlistViewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }

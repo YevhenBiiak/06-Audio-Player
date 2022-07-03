@@ -28,7 +28,7 @@ class PlayingNowView: UIView {
         return label
     }()
     
-    private let playPauseButton: UIButton = {
+    let playPauseButton: UIButton = {
         var config: UIButton.Configuration = .plain()
         config.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(scale: UIImage.SymbolScale.large)
         config.image = UIImage(systemName: "play.fill")
@@ -37,7 +37,7 @@ class PlayingNowView: UIView {
         return button
     }()
     
-    private let nextTrackButton: UIButton = {
+    let nextTrackButton: UIButton = {
         var config: UIButton.Configuration = .plain()
         config.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(scale: UIImage.SymbolScale.large)
         config.image = UIImage(systemName: "forward.fill")
@@ -48,18 +48,18 @@ class PlayingNowView: UIView {
     
     // MARK: - Properties
     
-    var song: Song? {
+    var song: Song! {
         didSet {
-            coverImage.image = song?.cover ?? AppConstants.emptyCover
-            trackLabel.text = song?.track
+            coverImage.image = song.cover ?? AppConstants.emptyCover
+            trackLabel.text = song.track
         }
     }
     
-    private var isPlayingNow: Bool = false
-    
-    var tapHandler: (() -> Void)?
-    var playButtonHandler: (() -> Void)?
-    var nextButtonHandler: (() -> Void)?
+    var isPlaying: Bool = false {
+        didSet {
+            playPauseButton.configurationUpdateHandler?(playPauseButton)
+        }
+    }
     
     // MARK: - Initializers and override methods
     
@@ -74,54 +74,17 @@ class PlayingNowView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.addBorder(at: .top, color: .systemGray4, width: 0.5, topInset: 80)
+        self.addBorder(at: .top, color: .systemGray4, width: 0.5, topInset: AppConstants.playingNowHeight)
         coverImage.layer.cornerRadius = 5
         coverImage.layer.masksToBounds = true
     }
     
-    // MARK: - Helpers methods
+    // MARK: - Helper initialization methods
     
     private func setupViews() {
         addSubviews()
-        addConstraints()
-        setupHandlers()
-    }
-    
-    private func setupHandlers() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(playingNowTapped))
-        self.addGestureRecognizer(tapGesture)
-        
-        playPauseButton.addAction(
-            UIAction { [unowned self] _ in
-                playButtonHandler?()
-                isPlayingNow.toggle()
-            },
-            for: .touchUpInside
-        )
-        playPauseButton.configurationUpdateHandler = { [unowned self] button in
-            if button.state == .normal {
-                var conf = button.configuration
-                conf?.image = isPlayingNow ? UIImage(systemName: "pause.fill") : UIImage(systemName: "play.fill")
-                button.configuration = conf
-            }
-        }
-        
-        nextTrackButton.addAction(
-            UIAction { [unowned self] _ in nextButtonHandler?() },
-            for: .touchUpInside
-        )
-    }
-    
-    @objc private func playingNowTapped() {
-        
-    }
-    
-    @objc private func playButttonTapped() {
-        playButtonHandler?()
-    }
-    
-    @objc private func nextButtonTapped() {
-        
+        setConstraints()
+        configurePlayPausButton()
     }
     
     private func addSubviews() {
@@ -132,7 +95,7 @@ class PlayingNowView: UIView {
         self.addSubview(nextTrackButton)
     }
     
-    private func addConstraints() {
+    private func setConstraints() {
         coverImage.translatesAutoresizingMaskIntoConstraints = false
         trackLabel.translatesAutoresizingMaskIntoConstraints = false
         playPauseButton.translatesAutoresizingMaskIntoConstraints = false
@@ -146,13 +109,13 @@ class PlayingNowView: UIView {
         self.addConstraints(V: "|-24-[nextTrackButton]")
     }
     
-    // method to call from SongListiewController
-    func setConstraints() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        guard let superview = superview else { return }
-        self.topAnchor.constraint(equalTo: superview.safeBottomAnchor, constant: -80).isActive = true
-        self.leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
-        self.rightAnchor.constraint(equalTo: superview.rightAnchor).isActive = true
-        self.bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
+    private func configurePlayPausButton() {
+        playPauseButton.configurationUpdateHandler = { [unowned self] button in
+            if button.state == .normal {
+                var config = button.configuration
+                config?.image = isPlaying ? UIImage(systemName: "pause.fill") : UIImage(systemName: "play.fill")
+                button.configuration = config
+            }
+        }
     }
 }

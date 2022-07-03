@@ -31,15 +31,18 @@ class SongItemView: UIView {
     private let playingNowImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "play.fill")
+        imageView.tintColor = UIColor.secondaryLabel
         imageView.isHidden = true
         return imageView
     }()
     
-    var isPlayingNow: Bool = false {
+    var isPlaying: Bool = false {
         didSet {
-            playingNowImage.isHidden = !isPlayingNow
+            playingNowImage.isHidden = !isPlaying
         }
     }
+    
+    // MARK: - Initializers and overridden methods
     
     init(withSong song: Song) {
         super.init(frame: .zero)
@@ -55,14 +58,16 @@ class SongItemView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.addBorder(at: .bottom, color: .systemGray4, width: 0.4, leftInset: 70)
+        self.addBorder(at: .top, color: .systemGray4, width: 0.4, leftInset: 70)
         coverImage.layer.cornerRadius = 5
         coverImage.layer.masksToBounds = true
     }
     
+    // MARK: - Helper initialization methods
+    
     private func setupViews() {
         addSubviews()
-        addConstraints()
+        setConstraints()
     }
     
     private func addSubviews() {
@@ -72,7 +77,7 @@ class SongItemView: UIView {
         self.addSubview(playingNowImage)
     }
     
-    private func addConstraints() {
+    private func setConstraints() {
         coverImage.translatesAutoresizingMaskIntoConstraints = false
         trackLabel.translatesAutoresizingMaskIntoConstraints = false
         artistLabel.translatesAutoresizingMaskIntoConstraints = false
