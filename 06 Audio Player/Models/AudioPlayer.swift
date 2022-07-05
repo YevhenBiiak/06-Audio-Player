@@ -9,43 +9,38 @@ import Foundation
 import AVFoundation
 
 protocol AudioPlayerDelegate: AnyObject {
-    func audioPlayerDidStoppPlaying()
-    func audioPlayerDidStartPlaying()
-    func audioPlayerDidFinishPlaying()
-    func audioPlayerDidUpdateTrack()
+    func audioPlayer(_ audioPlayer: AudioPlayer, didChangeState isPlaying: Bool)
+    func audioPlayer(_ audioPlayer: AudioPlayer, didFinishPlaying flag: Bool)
+    func audioPlayer(_ audioPlayer: AudioPlayer, didUpdateSongWith song: Song)
 }
 
-class AudioPlayer: NSObject, AVAudioPlayerDelegate {
-    static var shared = AudioPlayer()
+class AudioPlayer: NSObject {
+//    static var shared = AudioPlayer()
     private var player = AVAudioPlayer()
     weak var delegate: AudioPlayerDelegate?
     
-    var trackNumber: Int?
-    var currentTrack: Song? {
-        trackNumber == nil ? nil : songs[trackNumber!]
+    var songs: [Song]?
+    var songNumber: Int?
+    var currentSong: Song? {
+        songNumber == nil ? nil : songs?[songNumber!]
     }
     
-    var songs: [Song] = [] {
-        didSet {
-            trackNumber = songs.isEmpty ? nil : 0
-            updatePlayer(withTrack: currentTrack)
-        }
-    }
+    // MARK: - Inizializers
     
-    private override init() {
-        super.init()
+    init(delegate: AudioPlayerDelegate) {
+        self.delegate = delegate
     }
 
     // MARK: - Methods
     
     func pause() {
         player.pause()
-        delegate?.audioPlayerDidStoppPlaying()
+        delegate?.audioPlayer(self, didChangeState: player.isPlaying)
     }
     
     func play() {
         player.play()
-        delegate?.audioPlayerDidStartPlaying()
+        delegate?.audioPlayer(self, didChangeState: player.isPlaying)
     }
     
     func playPause() {
@@ -57,44 +52,53 @@ class AudioPlayer: NSObject, AVAudioPlayerDelegate {
     }
     
     func next() {
-        if let current = trackNumber {
-            let newTrackNumber = current + 1 >= songs.count ? 0 : current + 1
-            play(newTrackNumber)
+        if let current = songNumber {
+            let newSongNumber = current + 1 >= songs!.count ? 0 : current + 1
+            play(newSongNumber)
         }
     }
     
     func previous() {
-        if let current = trackNumber {
-            let newTrackNumber = current - 1 < 0 ? songs.count - 1 : current - 1
-            play(newTrackNumber)
+        if let current = songNumber {
+            let newSongNumber = current - 1 < 0 ? songs!.count - 1 : current - 1
+            play(newSongNumber)
         }
     }
     
     func play(_ index: Int) {
-        if index == trackNumber {
+        if index == songNumber {
             playPause()
         } else {
-            trackNumber = index
-            updatePlayer(withTrack: currentTrack)
+            songNumber = index
+            updatePlayer(withSong: currentSong)
             play()
         }
     }
     
-    private func updatePlayer(withTrack track: Song?) {
-        guard let url = track?.fileURL else {
-            print("song is nil")
+    private func updatePlayer(withSong song: Song?) {
+        guard let url = song?.url else {
+            print("songs is nil")
             return
         }
         do {
             player = try AVAudioPlayer(contentsOf: url)
             player.delegate = self
-            delegate?.audioPlayerDidUpdateTrack()
+            delegate?.audioPlayer(self, didUpdateSongWith: song!)
         } catch {
             print(error)
         }
     }
     
+    func updatePlaylist(withSongs songs: [Song]) {
+        self.songs = songs
+        songNumber = songs.isEmpty == true ? nil : 0
+        updatePlayer(withSong: currentSong)
+    }
+    
+}
+
+extension AudioPlayer: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        delegate?.audioPlayerDidFinishPlaying()
+        delegate?.audioPlayer(self, didFinishPlaying: flag)
     }
 }

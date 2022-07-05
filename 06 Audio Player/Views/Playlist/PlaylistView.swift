@@ -8,10 +8,10 @@
 import UIKit
 
 protocol PlaylistViewDelegate: AnyObject {
-    func didSelectTrackAt(_ index: Int)
-    func didTapPlayPauseButton(_ button: UIButton)
-    func didTapNextTrackButton(_ button: UIButton)
-    func didTapPlayingNowView(_ view: UIView)
+    func playlistView(_ playlistView: PlaylistView, didSelectSongAt index: Int)
+    func playlistView(_ playlistView: PlaylistView, didTapPlayPauseButton button: UIButton)
+    func playlistView(_ playlistView: PlaylistView, didTapNextSongButton button: UIButton)
+    func playlistView(_ playlistView: PlaylistView, didTapPlayingNowView view: UIView)
 }
 
 class PlaylistView: UIView {
@@ -23,15 +23,15 @@ class PlaylistView: UIView {
     
     // MARK: - Properties
     
-    var playingTrackNumber: Int? {
+    var playingSongNumber: Int? {
         didSet {
-            songScrollView.playingTrackNumber = playingTrackNumber
+            songScrollView.playingSongNumber = playingSongNumber
         }
     }
     
-    var currentTrack: Song! {
+    var currentSong: Song? {
         didSet {
-            playingNowView.song = currentTrack
+            playingNowView.song = currentSong
         }
     }
     
@@ -45,8 +45,9 @@ class PlaylistView: UIView {
     
     // MARK: - Initializers and overridden methods
     
-    init() {
+    init(delegate: PlaylistViewDelegate) {
         super.init(frame: .zero)
+        self.delegate = delegate
         setupViews()
     }
     
@@ -78,12 +79,12 @@ class PlaylistView: UIView {
     private func addButtonActions() {
         // add action to playPauseButton
         playingNowView.playPauseButton.addAction(UIAction { [unowned self] _ in
-            delegate?.didTapPlayPauseButton(playingNowView.playPauseButton)
+            delegate?.playlistView(self, didTapPlayPauseButton: playingNowView.playPauseButton)
         }, for: .touchUpInside)
         
-        // add action to nextTrackButton
-        playingNowView.nextTrackButton.addAction( UIAction { [unowned self] _ in
-            delegate?.didTapNextTrackButton(playingNowView.nextTrackButton)
+        // add action to nextSongButton
+        playingNowView.nextSongButton.addAction( UIAction { [unowned self] _ in
+            delegate?.playlistView(self, didTapNextSongButton: playingNowView.nextSongButton)
         }, for: .touchUpInside )
     }
     
@@ -93,12 +94,12 @@ class PlaylistView: UIView {
     }
     
     @objc private func playingNowDidTap(gesture: UITapGestureRecognizer) {
-        delegate?.didTapPlayingNowView(playingNowView)
+        delegate?.playlistView(self, didTapPlayingNowView: playingNowView)
     }
     
-    // MARK: - Configuration methods
+    // MARK: - Updating methods
     
-    func reload(withSongs songs: [Song]) {
+    func update(withSongs songs: [Song]) {
         songScrollView.reload(withSongs: songs)
         addTapGestures()
     }
@@ -108,14 +109,14 @@ class PlaylistView: UIView {
             return
         }
         for (i, view) in songItemViews.enumerated() {
-            let tap = UITapGestureRecognizer(target: self, action: #selector(trackDidSelect(gesture:)))
+            let tap = UITapGestureRecognizer(target: self, action: #selector(songDidSelect(gesture:)))
             view.addGestureRecognizer(tap)
             view.tag = i
         }
     }
     
-    @objc private func trackDidSelect(gesture: UITapGestureRecognizer) {
+    @objc private func songDidSelect(gesture: UITapGestureRecognizer) {
         let index = gesture.view!.tag
-        delegate?.didSelectTrackAt(index)
+        delegate?.playlistView(self, didSelectSongAt: index)
     }
 }

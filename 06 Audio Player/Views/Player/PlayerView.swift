@@ -12,11 +12,11 @@ class PlayerView: UIView {
     private let coverImage: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .systemGray5
-        imageView.image = AppConstants.emptyCover
+        imageView.image = AppConstants.defaultArtwork
         return imageView
     }()
     
-    private let trackLabel: UILabel = {
+    private let songLabel: UILabel = {
         let label = UILabel()
         return label
     }()

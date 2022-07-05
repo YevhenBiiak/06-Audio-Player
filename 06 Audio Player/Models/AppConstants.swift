@@ -11,7 +11,7 @@ class AppConstants {
     
     static let songItemHeight: CGFloat = 65
     static let playingNowHeight: CGFloat = 80
-    static let emptyCover = UIImage(systemName: "music.note", withConfiguration: UIImage.SymbolConfiguration(weight: .thin))
+    static let defaultArtwork = UIImage(systemName: "music.note", withConfiguration: UIImage.SymbolConfiguration(weight: .thin))!
     
     private init() {}
 }
