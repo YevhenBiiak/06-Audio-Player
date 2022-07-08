@@ -23,7 +23,7 @@ class PlayingNowView: UIView {
         return imageView
     }()
     
-    private let songLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         return label
     }()
@@ -51,7 +51,7 @@ class PlayingNowView: UIView {
     var song: Song? {
         didSet {
             coverImage.image = song?.artwork ?? AppConstants.defaultArtwork
-            songLabel.text = song?.title ?? song?.url.lastPathComponent.replacingOccurrences(of: "_", with: " ")
+            titleLabel.text = song?.title ?? song?.url.lastPathComponent.replacingOccurrences(of: "_", with: " ")
         }
     }
     
@@ -90,21 +90,21 @@ class PlayingNowView: UIView {
     private func addSubviews() {
         self.addSubview(blurredView)
         self.addSubview(coverImage)
-        self.addSubview(songLabel)
+        self.addSubview(titleLabel)
         self.addSubview(playPauseButton)
         self.addSubview(nextSongButton)
     }
     
     private func setConstraints() {
         coverImage.translatesAutoresizingMaskIntoConstraints = false
-        songLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         playPauseButton.translatesAutoresizingMaskIntoConstraints = false
         nextSongButton.translatesAutoresizingMaskIntoConstraints = false
         
-        songLabel.setContentCompressionResistancePriority(UILayoutPriority(100), for: .horizontal)
-        self.addConstraints(H: "|-10-[coverImage(58)]-8-[songLabel]->=8-[playPauseButton]-8-[nextSongButton]-16-|")
+        titleLabel.setContentCompressionResistancePriority(UILayoutPriority(100), for: .horizontal)
+        self.addConstraints(H: "|-10-[coverImage(58)]-8-[titleLabel]->=8-[playPauseButton]-8-[nextSongButton]-16-|")
         self.addConstraints(V: "|-10-[coverImage(58)]")
-        self.addConstraints(V: "|-30-[songLabel]")
+        self.addConstraints(V: "|-30-[titleLabel]")
         self.addConstraints(V: "|-24-[playPauseButton]")
         self.addConstraints(V: "|-24-[nextSongButton]")
     }

@@ -16,7 +16,7 @@ class SongItemView: UIView {
         return imageView
     }()
     
-    private let songLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         return label
     }()
@@ -47,7 +47,7 @@ class SongItemView: UIView {
     init(withSong song: Song) {
         super.init(frame: .zero)
         coverImage.image = song.artwork ?? AppConstants.defaultArtwork
-        songLabel.text = song.title ?? song.url.lastPathComponent.replacingOccurrences(of: "_", with: " ")
+        titleLabel.text = song.title ?? song.url.lastPathComponent.replacingOccurrences(of: "_", with: " ")
         artistLabel.text = song.artist ?? "Unknown"
         setupViews()
     }
@@ -58,7 +58,7 @@ class SongItemView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.addBorder(at: .top, color: .systemGray4, width: 0.4, leftInset: 70)
+        self.addBorder(at: .top, color: .systemGray4, width: 0.4, leftInset: 78)
         coverImage.layer.cornerRadius = 5
         coverImage.layer.masksToBounds = true
     }
@@ -72,19 +72,19 @@ class SongItemView: UIView {
     
     private func addSubviews() {
         self.addSubview(coverImage)
-        self.addSubview(songLabel)
+        self.addSubview(titleLabel)
         self.addSubview(artistLabel)
         self.addSubview(playingNowImage)
     }
     
     private func setConstraints() {
         coverImage.translatesAutoresizingMaskIntoConstraints = false
-        songLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         artistLabel.translatesAutoresizingMaskIntoConstraints = false
         playingNowImage.translatesAutoresizingMaskIntoConstraints = false
         
-        self.addConstraints(H: "|[coverImage(60)]", V: "|~[coverImage(60)]~|")
-        self.addConstraints(H: "[coverImage]-8-[songLabel]-8-|", V: "|-8-[songLabel]")
+        self.addConstraints(H: "|-10-[coverImage(60)]", V: "|~[coverImage(60)]~|")
+        self.addConstraints(H: "[coverImage]-8-[titleLabel]-8-|", V: "|-8-[titleLabel]")
         self.addConstraints(H: "[coverImage]-8-[artistLabel]-8-|", V: "[artistLabel]-8-|")
         self.addConstraints(H: "[playingNowImage]-16-|", V: "|~[playingNowImage]~|")
     }

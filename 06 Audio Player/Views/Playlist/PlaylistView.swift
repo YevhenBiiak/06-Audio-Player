@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 protocol PlaylistViewDelegate: AnyObject {
     func playlistView(_ playlistView: PlaylistView, didSelectSongAt index: Int)
@@ -99,7 +100,16 @@ class PlaylistView: UIView {
     
     // MARK: - Updating methods
     
-    func update(withSongs songs: [Song]) {
+    func update(withAudioPlayer audioPlayer: AudioPlayer) {
+        let song = audioPlayer.currentSong!
+        
+        songScrollView.playingSongNumber = audioPlayer.songNumber
+        playingNowView.song = song
+        
+        MPNowPlayingInfoCenter.update(withAudioPlayer: audioPlayer)
+    }
+    
+    func updatePlaylist(with songs: [Song]) {
         songScrollView.reload(withSongs: songs)
         addTapGestures()
     }

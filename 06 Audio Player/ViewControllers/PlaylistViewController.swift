@@ -11,34 +11,27 @@ import MediaPlayer
 class PlaylistViewController: UIViewController {
     
     lazy var playlistView = PlaylistView(delegate: self)
-    lazy var audioPlayer = AudioPlayer(delegate: self)
-    
-    var songs: [Song] = [] {
-        didSet {
-            playlistView.update(withSongs: songs)
-            audioPlayer.updatePlaylist(withSongs: songs)
-        }
-    }
+    lazy var audioPlayer = AudioPlayer()
     
     // MARK: - Life cycle and overridden methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.becomeFirstResponder()
-        
         setupViews()
-        songs = Storage.loadSongs()
+        audioPlayer.delegate = self
+        audioPlayer.updatePlaylist(withSongs: Storage.loadSongs())
     }
     
-//    override var canBecomeFirstResponder: Bool {
-//        true
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        playlistView.playingSongNumber = audioPlayer.songNumber
+        playlistView.currentSong = audioPlayer.currentSong
+        playlistView.isPlaying = audioPlayer.isPlaying
+    }
+    
     override func remoteControlReceived(with event: UIEvent?) {
         switch event?.subtype {
-        case .remoteControlPlay:
-            audioPlayer.play()
-        case .remoteControlPause:
-            audioPlayer.pause()
+        case .remoteControlPlay, .remoteControlPause:
+            audioPlayer.playPause()
         case .remoteControlNextTrack:
             audioPlayer.next()
         case .remoteControlPreviousTrack:
@@ -70,34 +63,14 @@ class PlaylistViewController: UIViewController {
 // MARK: - AudioPlayerDelegate
 
 extension PlaylistViewController: AudioPlayerDelegate {
+    func audioPlayer(_ audioPlayer: AudioPlayer, didChangeSong song: Song) {
+        playlistView.update(withAudioPlayer: audioPlayer)
+    }
     func audioPlayer(_ audioPlayer: AudioPlayer, didChangeState isPlaying: Bool) {
         playlistView.isPlaying = isPlaying
     }
-    
-    func audioPlayer(_ audioPlayer: AudioPlayer, didFinishPlaying flag: Bool) {
-        audioPlayer.next()
-    }
-    
-    func audioPlayer(_ audioPlayer: AudioPlayer, didUpdateSongWith song: Song) {
-        playlistView.playingSongNumber = audioPlayer.songNumber
-        playlistView.currentSong = song
-        updateNowPlayingInfo(withSong: song)
-    }
-    
-    private func updateNowPlayingInfo(withSong song: Song) {
-        let title = song.title ?? song.url.lastPathComponent.replacingOccurrences(of: "_", with: " ")
-        let artist = song.artist ?? "Unknown"
-        let artwork = { () -> MPMediaItemArtwork? in
-            guard let art = song.artwork else { return nil }
-            return MPMediaItemArtwork(boundsSize: CGSize.init(width: 1, height: 1)) { _ in art }
-        }()
-        
-        var nowPlayingInfo: [String: Any] = [:]
-        nowPlayingInfo[MPMediaItemPropertyTitle] = title
-        nowPlayingInfo[MPMediaItemPropertyArtist] = artist
-        nowPlayingInfo[MPMediaItemPropertyArtwork] = artwork
-        
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    func audioPlayer(_ audioPlayer: AudioPlayer, didUpdatePlaylist songs: [Song]) {
+        playlistView.updatePlaylist(with: songs)
     }
 }
 
@@ -107,16 +80,26 @@ extension PlaylistViewController: PlaylistViewDelegate {
     func playlistView(_ playlistView: PlaylistView, didSelectSongAt index: Int) {
         audioPlayer.play(index)
     }
-    
     func playlistView(_ playlistView: PlaylistView, didTapPlayPauseButton button: UIButton) {
         audioPlayer.playPause()
     }
-    
     func playlistView(_ playlistView: PlaylistView, didTapNextSongButton button: UIButton) {
         audioPlayer.next()
     }
-    
     func playlistView(_ playlistView: PlaylistView, didTapPlayingNowView view: UIView) {
-        // present player vc
+        showPlayerViewController()
+    }
+    
+    // helper methods
+    private func showPlayerViewController() {
+        let playerViewController = PlayerViewController(audioPlayer: audioPlayer)
+        playerViewController.disappearHandler = { [unowned self] in
+            audioPlayer.delegate = self
+            // update view with current song and state
+            playlistView.playingSongNumber = audioPlayer.songNumber
+            playlistView.currentSong = audioPlayer.currentSong
+            playlistView.isPlaying = audioPlayer.isPlaying
+        }
+        present(playerViewController, animated: true)
     }
 }

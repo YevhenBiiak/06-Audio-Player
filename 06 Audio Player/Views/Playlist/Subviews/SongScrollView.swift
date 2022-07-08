@@ -17,13 +17,14 @@ class SongScrollView: UIScrollView {
     
     var playingSongNumber: Int? {
         didSet {
-            if let number = playingSongNumber,
-               let songItemViews = stackView.arrangedSubviews as? [SongItemView] {
+            if let number = playingSongNumber, let songItemViews = stackView.arrangedSubviews as? [SongItemView],
+                !songItemViews.isEmpty {
                 for view in songItemViews where view.isPlaying {
                     view.isPlaying.toggle()
                 }
                 songItemViews[number].isPlaying.toggle()
             }
+            
         }
     }
         

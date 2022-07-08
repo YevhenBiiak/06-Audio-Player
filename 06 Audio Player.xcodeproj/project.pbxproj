@@ -22,6 +22,9 @@
 		575A0D09286790E70027DA99 /* SongScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575A0D08286790E70027DA99 /* SongScrollView.swift */; };
 		575ABEC6286F7110005310B6 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575ABEC5286F7110005310B6 /* Storage.swift */; };
 		575ABEC8287068EE005310B6 /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575ABEC7287068EE005310B6 /* PlaylistView.swift */; };
+		577B17A82878A06300AFA8C5 /* MPNowPlayingInfoCenter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B17A72878A06200AFA8C5 /* MPNowPlayingInfoCenter+.swift */; };
+		577B17AA2878AE8B00AFA8C5 /* MPVolumeView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B17A92878AE8B00AFA8C5 /* MPVolumeView+.swift */; };
+		577B17AC2878B76800AFA8C5 /* TimeInterval+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B17AB2878B76800AFA8C5 /* TimeInterval+.swift */; };
 		579928882874863E00F49E71 /* imagine-dragons-bones.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 579928642874862C00F49E71 /* imagine-dragons-bones.mp3 */; };
 		579928892874863E00F49E71 /* jack-harlow-dua-lipa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 579928652874862D00F49E71 /* jack-harlow-dua-lipa.mp3 */; };
 		5799288A2874863E00F49E71 /* goya-menor-feat_-nektunez-ameno-amapiano-you-wanna-bamba-david-guetta-remix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 579928662874862D00F49E71 /* goya-menor-feat_-nektunez-ameno-amapiano-you-wanna-bamba-david-guetta-remix.mp3 */; };
@@ -80,6 +83,9 @@
 		575A0D08286790E70027DA99 /* SongScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongScrollView.swift; sourceTree = "<group>"; };
 		575ABEC5286F7110005310B6 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		575ABEC7287068EE005310B6 /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
+		577B17A72878A06200AFA8C5 /* MPNowPlayingInfoCenter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MPNowPlayingInfoCenter+.swift"; sourceTree = "<group>"; };
+		577B17A92878AE8B00AFA8C5 /* MPVolumeView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MPVolumeView+.swift"; sourceTree = "<group>"; };
+		577B17AB2878B76800AFA8C5 /* TimeInterval+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+.swift"; sourceTree = "<group>"; };
 		579928642874862C00F49E71 /* imagine-dragons-bones.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "imagine-dragons-bones.mp3"; sourceTree = "<group>"; };
 		579928652874862D00F49E71 /* jack-harlow-dua-lipa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "jack-harlow-dua-lipa.mp3"; sourceTree = "<group>"; };
 		579928662874862D00F49E71 /* goya-menor-feat_-nektunez-ameno-amapiano-you-wanna-bamba-david-guetta-remix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "goya-menor-feat_-nektunez-ameno-amapiano-you-wanna-bamba-david-guetta-remix.mp3"; sourceTree = "<group>"; };
@@ -197,6 +203,9 @@
 			isa = PBXGroup;
 			children = (
 				57564505286729E9002D801C /* UIViewExtension.swift */,
+				577B17AB2878B76800AFA8C5 /* TimeInterval+.swift */,
+				577B17A92878AE8B00AFA8C5 /* MPVolumeView+.swift */,
+				577B17A72878A06200AFA8C5 /* MPNowPlayingInfoCenter+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -406,12 +415,15 @@
 				5756450028671578002D801C /* PlayerViewController.swift in Sources */,
 				575644F5286714BF002D801C /* PlaylistViewController.swift in Sources */,
 				57564506286729E9002D801C /* UIViewExtension.swift in Sources */,
+				577B17A82878A06300AFA8C5 /* MPNowPlayingInfoCenter+.swift in Sources */,
+				577B17AA2878AE8B00AFA8C5 /* MPVolumeView+.swift in Sources */,
 				575ABEC8287068EE005310B6 /* PlaylistView.swift in Sources */,
 				575A0D09286790E70027DA99 /* SongScrollView.swift in Sources */,
 				575644FA2867152B002D801C /* PlayerView.swift in Sources */,
 				575644FC28671552002D801C /* SongItemView.swift in Sources */,
 				57F1FECA2869FA42005A2986 /* AudioPlayer.swift in Sources */,
 				575ABEC6286F7110005310B6 /* Storage.swift in Sources */,
+				577B17AC2878B76800AFA8C5 /* TimeInterval+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

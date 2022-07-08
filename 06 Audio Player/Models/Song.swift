@@ -9,17 +9,14 @@ import UIKit
 import MediaPlayer
 
 class Song {
+    var url: URL
     lazy var title: String? = getValue(byKey: .commonKeyTitle) as? String
-    
     lazy var artist: String? = getValue(byKey: .commonKeyArtist) as? String
-    
     lazy var artwork: UIImage? = {
         if let data = getValue(byKey: .commonKeyArtwork) as? Data {
             return UIImage(data: data)
         } else { return nil }
     }()
-    
-    var url: URL
     
     init(url: URL) {
         self.url = url
