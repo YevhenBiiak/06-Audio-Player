@@ -35,7 +35,8 @@ class PlayerViewController: UIViewController {
         self.audioPlayer.delegate = self
         
         playerView.isPlaying = audioPlayer.isPlaying
-        playerView.update(withAudioPlayer: audioPlayer)
+        playerView.updatePlayMode(audioPlayer.playMode)
+        playerView.updateSongView(with: audioPlayer)
         playerView.updateCurrentTime(audioPlayer.currentTime)
         playerView.updateVolume(audioPlayer.volume)
     }
@@ -67,13 +68,13 @@ class PlayerViewController: UIViewController {
 
 extension PlayerViewController: AudioPlayerDelegate {
     func audioPlayer(_ audioPlayer: AudioPlayer, didChangeSong song: Song) {
-        playerView.update(withAudioPlayer: audioPlayer)
+        playerView.updateSongView(with: audioPlayer)
     }
     func audioPlayer(_ audioPlayer: AudioPlayer, didChangeState isPlaying: Bool) {
         playerView.isPlaying = isPlaying
     }
     func audioPlayer(_ audioPlayer: AudioPlayer, didChangePlayMode playMode: PlayMode) {
-        
+        playerView.updatePlayMode(playMode)
     }
     func audioPlayer(_ audioPlayer: AudioPlayer, didUpdateVolume volume: Float) {
         playerView.updateVolume(volume)
@@ -85,7 +86,7 @@ extension PlayerViewController: AudioPlayerDelegate {
 
 extension PlayerViewController: PlayerViewDelegate {
     func playerView(_ playerView: PlayerView, didTapPlayModeButton button: UIButton) {
-        
+        audioPlayer.changePlayMode()
     }
     func playerView(_ playerView: PlayerView, didTapPreviousButton button: UIButton) {
         audioPlayer.previous()

@@ -55,8 +55,6 @@ class PlayerView: UIView {
     
     private let playModeButton: UIButton = {
         var config: UIButton.Configuration = .plain()
-        config.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(scale: .large)
-        config.image = UIImage(systemName: "repeat.1")
         config.baseForegroundColor = .secondaryLabel
         let button = UIButton(configuration: config)
         return button
@@ -78,7 +76,8 @@ class PlayerView: UIView {
     
     private let elapsedTimeLabel: UILabel = {
         let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.secondaryLabel
+            .foregroundColor: UIColor.secondaryLabel,
+            .font: UIFont.systemFont(ofSize: 14)
         ]
         let attrString = NSAttributedString(string: "0:00", attributes: attributes)
         let label = UILabel()
@@ -88,7 +87,8 @@ class PlayerView: UIView {
     
     private let remainingTimeLabel: UILabel = {
         let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.secondaryLabel
+            .foregroundColor: UIColor.secondaryLabel,
+            .font: UIFont.systemFont(ofSize: 14)
         ]
         let attrString = NSAttributedString(string: "0:00", attributes: attributes)
         let label = UILabel()
@@ -138,7 +138,12 @@ class PlayerView: UIView {
     
     private weak var delegate: PlayerViewDelegate?
     
-    var isPlaying: Bool = false
+    var isPlaying: Bool! {
+        didSet {
+            playPauseButton.configurationUpdateHandler?(playPauseButton)
+            animateCoverImage()
+        }
+    }
     
     // MARK: - Initializers and overridden methods
     
@@ -199,7 +204,6 @@ class PlayerView: UIView {
     
     private func setConstraints() {
         grabbeImageView.translatesAutoresizingMaskIntoConstraints = false
-        coverImage.translatesAutoresizingMaskIntoConstraints = false
         detailStack.translatesAutoresizingMaskIntoConstraints = false
         seekSlider.translatesAutoresizingMaskIntoConstraints = false
         elapsedTimeLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -209,9 +213,7 @@ class PlayerView: UIView {
         previousSongButton.translatesAutoresizingMaskIntoConstraints = false
         volumeSlider.translatesAutoresizingMaskIntoConstraints = false
         
-        coverImage.heightAnchor.constraint(equalTo: coverImage.widthAnchor).isActive = true
         addConstraints(H: "|~[grabbeImageView]~|", V: "|-(-10)-[grabbeImageView]")
-        addConstraints(H: "|-30-[coverImage]-30-|", V: "[grabbeImageView]-10-[coverImage]")
         addConstraints(H: "|-30-[detailStack]-30-|", V: "[detailStack(50)]")
         addConstraints(H: "|-30-[seekSlider]-30-|", V: "[detailStack]-20-[seekSlider]")
         addConstraints(H: "|-30-[elapsedTimeLabel]", V: "[seekSlider]-[elapsedTimeLabel]")
@@ -279,24 +281,34 @@ class PlayerView: UIView {
             default: break }
             button.configuration = config
         }
+        
         previousSongButton.configurationUpdateHandler = nextSongButton.configurationUpdateHandler
         
-        playModeButton.configurationUpdateHandler = {[unowned self] button in
+        playModeButton.configurationUpdateHandler = { button in
             var config = button.configuration
             if button.state == .highlighted {
-                config?.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 22))
+                config?.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 18))
             }
             if button.state == .normal {
-                config?.image = isPlaying ? UIImage(systemName: "pause.fill") : UIImage(systemName: "play.fill")
-                config?.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 25))
+                config?.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 20))
             }
             button.configuration = config
         }
     }
     
+    private func animateCoverImage() {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: { [unowned self] in
+            if isPlaying {
+                coverImage.frame = CGRect(x: 30, y: 50, width: frame.width - 60, height: frame.width - 60)
+            } else {
+                coverImage.frame = CGRect(x: 60, y: 80, width: frame.width - 120, height: frame.width - 120)
+            }
+        }, completion: nil)
+    }
+    
     // MARK: - Updating methods
     
-    func update(withAudioPlayer audioPlayer: AudioPlayer) {
+    func updateSongView(with audioPlayer: AudioPlayer) {
         let song = audioPlayer.currentSong!
         
         coverImage.image = song.artwork ?? AppConstants.defaultArtwork
@@ -318,5 +330,16 @@ class PlayerView: UIView {
     func updateCurrentTime(_ time: TimeInterval) {
         seekSlider.value = Float(time)
         elapsedTimeLabel.text = time.stringRepresentationOfTime()
+    }
+    
+    func updatePlayMode(_ playMode: PlayMode) {
+        var config = playModeButton.configuration
+        switch playMode {
+            case .once: config?.image = UIImage(systemName: "arrow.clockwise")
+            case .repeatPlaylist: config?.image = UIImage(systemName: "repeat")
+            case .repeatSong: config?.image = UIImage(systemName: "repeat.1")
+            case .shuffle: config?.image = UIImage(systemName: "shuffle")
+        }
+        playModeButton.configuration = config
     }
 }

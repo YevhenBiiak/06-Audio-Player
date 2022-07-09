@@ -25,7 +25,7 @@ extension AudioPlayerDelegate {
     func audioPlayer(_ audioPlayer: AudioPlayer, didUpdateCurrentTime currentTime: TimeInterval) {}
 }
 
-enum PlayMode {case repeatPlaylist, repeatSong, shuffle, once}
+enum PlayMode: CaseIterable {case repeatPlaylist, repeatSong, shuffle, once}
 
 class AudioPlayer: NSObject {
     
@@ -34,8 +34,9 @@ class AudioPlayer: NSObject {
     var volumeObserver: NSKeyValueObservation!
     
     private var player = AVAudioPlayer()
-    private var playMode: PlayMode = .repeatPlaylist
     private var songs: [Song]?
+    
+    var playMode: PlayMode = .repeatPlaylist
     
     var currentSong: Song? { songs?.first { player.url == $0.url }}
     var songNumber: Int? { songs?.firstIndex { player.url == $0.url }}
@@ -126,9 +127,10 @@ class AudioPlayer: NSObject {
         player.currentTime = time
     }
     
-    func setPlayMode(_ mode: PlayMode) {
-        playMode = mode
-        delegate?.audioPlayer(self, didChangePlayMode: mode)
+    func changePlayMode() {
+        let nextIndex = PlayMode.allCases.firstIndex(of: playMode)! + 1
+        playMode = nextIndex == PlayMode.allCases.count ? PlayMode.allCases[0] : PlayMode.allCases[nextIndex]
+        delegate?.audioPlayer(self, didChangePlayMode: playMode)
     }
     
     func updatePlaylist(withSongs songs: [Song]) {
@@ -158,7 +160,7 @@ extension AudioPlayer: AVAudioPlayerDelegate {
             updatePlayer(withSong: songs?.randomElement())
             play()
         case .once:
-            break
+            pause()
         }
     }
 }
