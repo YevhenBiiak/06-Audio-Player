@@ -9,7 +9,7 @@ import UIKit
 
 class PlayerViewController: UIViewController {
     
-    private lazy var playerView = PlayerView(delegate: self)
+    private var playerView: PlayerView!
     private var audioPlayer: AudioPlayer!
     
     var disappearHandler: (() -> Void)?
@@ -25,9 +25,13 @@ class PlayerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        view = PlayerView(delegate: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
+        playerView = view as? PlayerView
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,13 +60,6 @@ class PlayerViewController: UIViewController {
             audioPlayer.previous()
         default: break
         }
-    }
-    
-    // MARK: - Helper setup methods
-    
-    private func setupViews() {
-        view.addSubview(playerView)
-        playerView.frame = UIScreen.main.bounds
     }
 }
 

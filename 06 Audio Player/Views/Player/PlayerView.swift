@@ -225,7 +225,7 @@ class PlayerView: UIView {
         playPauseButton.centerYAnchor.constraint(equalTo: volumeSlider.centerYAnchor, constant: -80).isActive = true
         nextSongButton.centerYAnchor.constraint(equalTo: seekSlider.centerYAnchor, constant: 80).isActive = true
         previousSongButton.centerYAnchor.constraint(equalTo: seekSlider.centerYAnchor, constant: 80).isActive = true
-        addConstraints(H: "|-30-[volumeSlider]-30-|", V: "[volumeSlider]-160-|")
+        addConstraints(H: "|-30-[volumeSlider]-30-|", V: "[volumeSlider]-100-|")
     }
     
     private func addActions() {
@@ -287,10 +287,10 @@ class PlayerView: UIView {
         playModeButton.configurationUpdateHandler = { button in
             var config = button.configuration
             if button.state == .highlighted {
-                config?.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 18))
+                config?.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 16))
             }
             if button.state == .normal {
-                config?.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 20))
+                config?.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 18))
             }
             button.configuration = config
         }
