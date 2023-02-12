@@ -1,12 +1,12 @@
 # 06-Audio-Player
 
-### Education project (No storyboard, No UITableView)
+### No Storyboard, no UITableView
 
-The audio player loads the songs from the bundle. 
-Takes metadata (artwork, title, artist) from each song. 
-Plays in the background. Displays the current song on the lock screen and in the control panel. 
-Playback control from remote control panel. Change playback mode (once, repeat one, repeat playlist, shuffle). 
-Change system volume. Seek slider changes current playing time
+The audio player loads songs from the bundle and takes metadata (artwork, title, artist) from each song.  
+The audio player plays songs in the background and displays the current song on the lock screen and in the control panel.  
+It also allows for playback control from the remote control panel.  
+Users can change playback mode (once, repeat one, repeat playlist, shuffle) and system volume.  
+The time slider changes the current playing time.
 
 | Used UI Elements | Additionally |
 --- | ---
