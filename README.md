@@ -1,12 +1,27 @@
-# 06-Audio-Player
+## 06-Audio-Player 
+(No Storyboard, no UITableView)
 
-### No Storyboard, no UITableView
+### Description:
+This project is an audio player app that allows users to play music from their device's local storage. The app loads songs from the main bundle using the Storage class, which uses the AVFoundation framework to extract metadata from the songs, such as title, artist, and artwork. The app supports remote control events, such as play, pause, next, and previous.
 
-The audio player loads songs from the bundle and takes metadata (artwork, title, artist) from each song.  
-The audio player plays songs in the background and displays the current song on the lock screen and in the control panel.  
-It also allows for playback control from the remote control panel.  
-Users can change playback mode (once, repeat one, repeat playlist, shuffle) and system volume.  
-The time slider changes the current playing time.
+## Features:
+
+- Play/pause, skip forward/backward;
+- Play music in the background;
+- Change the system volume;
+- Supports remote control;
+- Display the current song's title, artist, and artwork;
+- Display a playlist of all available songs;
+- Choose from four different play modes: repeat playlist, repeat song, shuffle, and once;
+- Seek through a song using a slider.
+
+## Used Frameworks:
+
+- UIKit: for creating the user interface and handling user interactions;
+- AVFoundation: for playing audio and extracting metadata from audio files;
+- MediaPlayer: for controlling the system's audio output volume.
+
+<details><summary>Used classes</summary>
 
 | Used UI Elements | Additionally |
 --- | ---
@@ -23,6 +38,21 @@ The time slider changes the current playing time.
 | `UIEvent` | `NotificationCenter`
 | `UIVisualEffectView` | `Timer`
 | `UIBlurEffect` | `KVO`
-<br>
+</details>
 
-<img src="https://user-images.githubusercontent.com/80542175/178109948-6081458f-79c6-4026-bb0d-0c925cfc21c3.gif" height=640 width=296><img src="https://user-images.githubusercontent.com/80542175/178109956-155bdd95-463d-4b3b-9e73-005b0669945b.gif" height=640 width=296><img src="https://user-images.githubusercontent.com/80542175/178109962-f792681b-6245-4e71-ac27-0c79e75796e2.gif" height=640 width=296><img src="https://user-images.githubusercontent.com/80542175/178110318-2ea8eae0-7c4d-4b1e-9773-abf727efbf24.gif" height=640 width=296>
+## Used Technology Stack:
+
+- Swift programming language (lazy variables, closures, and extensions);
+- Model-View-Controller (MVC) application architecture;
+- AVAudioPlayer for playing music;
+- Delegation pattern for communicating between classes and passing data;
+- Observer pattern (NSKeyValueObservation) for monitoring changes in sound volume.
+
+<details><summary><h2>GIF DEMO</h2></summary>
+  <p align=center>
+    <img width=23% src="https://user-images.githubusercontent.com/80542175/178109948-6081458f-79c6-4026-bb0d-0c925cfc21c3.gif">
+    <img width=23% src="https://user-images.githubusercontent.com/80542175/178109956-155bdd95-463d-4b3b-9e73-005b0669945b.gif">
+    <img width=23% src="https://user-images.githubusercontent.com/80542175/178109962-f792681b-6245-4e71-ac27-0c79e75796e2.gif">
+    <img width=23% src="https://user-images.githubusercontent.com/80542175/178110318-2ea8eae0-7c4d-4b1e-9773-abf727efbf24.gif">
+  </p>
+</details>
