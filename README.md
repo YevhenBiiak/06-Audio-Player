@@ -1,7 +1,13 @@
 ## 06-Audio-Player 
 (No Storyboard, no UITableView)
 
-### Description:
+<p align=center>
+  <img width=30% src="https://user-images.githubusercontent.com/80542175/226969885-b2cb5e59-f79c-4b80-b6c3-5a5e6ff09606.png">
+  <img width=30% src="https://user-images.githubusercontent.com/80542175/226969896-4b445a83-0dc8-4ca8-8cb0-c39f74843e43.png">
+  <img width=30% src="https://user-images.githubusercontent.com/80542175/226969903-533a6554-abff-49f9-b609-d80abb25a3e8.png">
+</p>
+
+#### Description:
 This project is an audio player app that allows users to play music from their device's local storage. The app loads songs from the main bundle using the Storage class, which uses the AVFoundation framework to extract metadata from the songs, such as title, artist, and artwork. The app supports remote control events, such as play, pause, next, and previous.
 
 ## Features:
@@ -23,7 +29,7 @@ This project is an audio player app that allows users to play music from their d
 
 <details><summary>Used classes</summary>
 
-| Used UI Elements | Additionally |
+| UI Elements | Additionally |
 --- | ---
 | `UINavigationController` | `AVAudioPlayer`
 | `UILabel` | `AVAsset`
