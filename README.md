@@ -8,7 +8,7 @@
 </p>
 
 #### Description:
-This project is an audio player app that allows users to play music from their device's local storage. The app loads songs from the main bundle using the Storage class, which uses the AVFoundation framework to extract metadata from the songs, such as title, artist, and artwork. The app supports remote control events, such as play, pause, next, and previous.
+This project is an audio player app that allows users to play music from their device's local storage. The app loads songs from the main bundle using the Storage class, which uses the `AVFoundation` framework to extract metadata from the songs, such as title, artist, and artwork. The app supports remote control events, such as play, pause, next, and previous.
 
 ## Features:
 
@@ -23,9 +23,9 @@ This project is an audio player app that allows users to play music from their d
 
 ## Used Frameworks:
 
-- UIKit: for creating the user interface and handling user interactions;
-- AVFoundation: for playing audio and extracting metadata from audio files;
-- MediaPlayer: for controlling the system's audio output volume.
+- `UIKit` for creating the user interface and handling user interactions;
+- `AVFoundation` for playing audio and extracting metadata from audio files;
+- `MediaPlayer` for controlling the system's audio output volume.
 
 <details><summary>Used classes</summary>
 
@@ -48,11 +48,11 @@ This project is an audio player app that allows users to play music from their d
 
 ## Used Technology Stack:
 
-- Swift programming language (lazy variables, closures, and extensions);
-- Model-View-Controller (MVC) application architecture;
-- AVAudioPlayer for playing music;
+- `Swift` programming language (lazy variables, closures, and extensions);
+- Model-View-Controller (`MVC`) application architecture;
+- `AVAudioPlayer` for playing music;
 - Delegation pattern for communicating between classes and passing data;
-- Observer pattern (NSKeyValueObservation) for monitoring changes in sound volume.
+- Observer pattern (`NSKeyValueObservation`) for monitoring changes in sound volume.
 
 <details><summary><h2>GIF DEMO</h2></summary>
   <p align=center>
